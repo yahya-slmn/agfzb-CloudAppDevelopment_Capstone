@@ -9,15 +9,17 @@ urlpatterns = [
     # view refers to the view function
     # name the URL
 
-    # path for about view
-    path('about/', views.about, name='about'),
+    path(route='about/', view=views.about, name='about'),
+
     # path for contact us view
-    path('contact/', views.contact, name='contact'),
+     path(route='contact/', view=views.contact, name='contact'),
 
     # path for registration
-    path('signup/', views.signup, name='signup'),
+    path('registration/', views.registration_request, name='registration'),
+
     # path for login
     path('login/', views.login_request, name='login'),
+
     # path for logout
     path('logout/', views.logout_request, name='logout'),
 

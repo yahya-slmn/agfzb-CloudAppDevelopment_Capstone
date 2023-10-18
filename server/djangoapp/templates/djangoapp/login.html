@@ -6,23 +6,18 @@
     <title>Login</title>
 </head>
 <body>
-    <h2>Login</h2>
-
-    {% if error_message %}
-        <p class="error">{{ error_message }}</p>
-    {% endif %}
-
-    <form method="post">
+    <form action="{% url 'djangoapp:login' %}"  method="post">
         {% csrf_token %}
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
-
-        <input type="submit" value="Login">
+        <div class="container">
+          <h1>Login</h1>
+          <label for="username"><b>User Name</b></label>
+          <input type="text" placeholder="Enter User Name: " name="username" required>
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password: " name="psw" required>
+          <div>
+            <button class="button" type="submit">Login</button>
+          </div>
+        </div>
     </form>
-
-    <p>Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></p>
 </body>
 </html>
